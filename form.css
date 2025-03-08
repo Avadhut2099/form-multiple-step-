@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-color: #ff9a76;
+}
+
+body {
+  background-color: #fffddd;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.form {
+  background-color: #272727;
+  width: clamp(
+    320px,
+    30%,
+    430px
+  ); /*  elements responsive without media queries. */
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+  z-index: 1;
+  color: white;
+}
+
+.input-group {
+  margin: 0.5rem 0;
+}
+
+input {
+  outline: none;
+}
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+/* Button */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 10px 12px;
+  display: block;
+  text-decoration: none;
+  width: min-content;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.btn-next {
+  background-color: var(--blue-color);
+  color: white;
+  float: right;
+}
+
+.btn-prev {
+  background-color: #777;
+  color: #fff;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--blue-color);
+}
+
+textarea {
+  width: 100%;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.input-box .prefix {
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(117, 114, 114);
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+}
+
+h3 {
+  color: #ff9a76;
+  padding-top: 15px;
+}
+.input-box:focus-within {
+  border-color: #777;
+}
+
+.progress-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin-bottom: 30px;
+  color: #ff9a76;
+}
+
+.progress-bar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--blue-color);
+  width: 0;
+  transition: 0.5s;
+}
+
+.progress-step {
+  width: 35px;
+  height: 35px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.2rem);
+  font-size: 0.85rem;
+}
+
+.progress-step.active {
+  background-color: var(--blue-color);
+  color: white;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+.add-exp-btn,
+.add-sl-btn {
+  color: #ff9a76;
+  padding: 0 10px 10px 0;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+}
+
+.add-experience,
+.add-solica {
+  margin-bottom: 20px;
+}
+
+.Uplode-img {
+  width: 60%;
+  height: 200px;
+}
+
+.filepdIp {
+  display: none;
+}
+.full-con {
+  border: none;
+}
+.flieup {
+  margin-top: 10px;
+  width: max-content;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #ff9a76;
+  color: white;
+}
+
+.submitchecked {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+}
